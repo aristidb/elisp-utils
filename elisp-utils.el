@@ -9,6 +9,6 @@
 
 (defun find-and-set-font (candidates)
   (let ((font (find-if (lambda (f) (find-font (font-spec :name f))) candidates)))
-    (set-face-attribute 'default nil :font font)))
+    (when font (set-face-attribute 'default nil :font font))))
 
 (provide 'elisp-utils)
